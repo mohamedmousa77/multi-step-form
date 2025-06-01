@@ -1,0 +1,70 @@
+.stepper-container {
+    background-image: url('../../../assets/images/bg-sidebar-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.step-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.step-circle {
+    width: 35px;
+    height: 35px;
+    border: 1px solid white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    font-weight: 600;
+    color: white;
+}
+
+.step-circle.active {
+    background-color: hsl(206, 94%, 87%);
+    color: hsl(213, 96%, 18%);
+}
+
+.step-labels {
+    display: flex;
+    flex-direction: column;
+    line-height: 16px;
+}
+
+.step-number {
+    color: hsl(231, 11%, 84%);
+    font-size: 12px;
+    margin: 0;
+}
+
+.step-title {
+    font-weight: 500;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 2px 0 0 0;
+}
+
+.wrapper{ 
+    padding-left: 10px;
+    height: 470px;
+    width: 800px;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 20px 20px 50px hsl(231, 11%, 63%);
+    border-radius: 10px;
+}

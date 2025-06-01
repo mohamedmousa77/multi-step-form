@@ -1,1 +1,25 @@
-<p>step2-select-plan works!</p>
+<div class="step-one-personal-info-container">
+    <h1 class="session-title">Select your plan</h1>
+    <p class="session-desc">You have the option of monthly or yearly pilling</p>
+    <div class="plans-wrapper">
+        <div *ngFor="let plan of selectedPlans; let i = index" 
+        class="plan-wrapper" 
+        [class.active]="i === selectedIndex"
+        (click)="selectPlan(i)">
+            <img [src]="getIconPath(plan.icon)" class="plan-icon" alt="Plan icon">
+            <p class="plan-title">{{ plan.title }}</p>
+            <p class="plan-price">{{ plan.price }}</p>
+        </div>
+    </div>
+    <div class="toggle-container">
+        <span [class.active]="!isYearly">Monthly</span>
+        
+        <label class="switch">
+            <input type="checkbox" [(ngModel)]="isYearly">
+            <span class="slider round"></span>
+        </label>
+        
+        <span [class.active]="isYearly">Yearly</span>
+    </div>
+    <input type="button" value="Next Step" class="next-step-btn">
+</div>

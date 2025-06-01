@@ -1,0 +1,132 @@
+.step-one-personal-info-container {
+    height: 440px;
+    width: 450px;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    padding-left: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    border-bottom-right-radius: 10px;
+    /* box-shadow: 20px 20px 50px hsl(231, 11%, 63%); */
+}
+.session-title {
+    color: hsl(213, 96%, 18%);
+}
+.session-desc {
+    color: hsl(231, 11%, 63%);
+}
+.next-step-btn {
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+    height: 40px;
+    width: 100px;
+    margin-top: 17%;
+    margin-left: 70%;
+    border: none;
+    cursor: pointer;
+}
+.plans-wrapper{ 
+    display: flex;
+    gap: 20px;
+}
+.plan-wrapper {
+    background-color: white;
+    height: 150px;
+    width: 100px;
+    border: 1px solid hsl(231, 11%, 63%);
+    border-radius: 10%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding-left: 5%;
+}
+.plan-wrapper:hover {
+    border: 2px solid hsl(243, 100%, 62%);
+}
+.plan-wrapper.active {
+    border: 2px solid hsl(243, 100%, 62%);
+    background-color:hsl(229, 24%, 87%) ;
+}
+.plan-title{
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(213, 96%, 18%);
+    margin-top: 60%;
+    margin-bottom: 0;
+    /* margin: 0; */
+}
+.plan-price {
+    margin: 0;
+    color:hsl(231, 11%, 63%) ;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(231, 100%, 99%);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 25px;
+    width: 370px;
+    gap: 15px;
+}
+
+.toggle-container span {
+    font-weight: 500;
+    color: hsl(231, 11%, 63%);
+    transition: color 0.3s;
+}
+
+.toggle-container span.active {
+    color: hsl(213, 96%, 18%);
+    font-weight: bold;
+}
+
+/* SWITCH */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(213, 96%, 18%);
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
