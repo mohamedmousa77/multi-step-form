@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormService } from '../../services/form.service';
 
 @Component({
   selector: 'app-step3-add-ons',
@@ -8,6 +9,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './step3-add-ons.component.css'
 })
 export class Step3AddOnsComponent {
+
+  constructor (private formService:FormService){}
   addOns = [
     {
       'title':'Online services',
@@ -25,5 +28,15 @@ export class Step3AddOnsComponent {
       'price':'+$2/mo'
     },
   ];
+
+  
+    onNext(){
+    console.log(`on Next called! `);
+    this.formService.goNextPage();
+  }
+  onBack(){
+    console.log(`on Back called! `);
+    this.formService.goBack();
+  }
 
 }

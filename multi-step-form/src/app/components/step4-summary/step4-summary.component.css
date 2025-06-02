@@ -1,0 +1,49 @@
+.step-one-personal-info-container {
+    height: 440px;
+    width: 450px;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    padding-left: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    border-bottom-right-radius: 10px;
+    /* box-shadow: 20px 20px 50px hsl(231, 11%, 63%); */
+}
+.session-title {
+    color: hsl(213, 96%, 18%);
+}
+.session-desc {
+    color: hsl(231, 11%, 63%);
+}
+.next-step-btn {
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+    height: 40px;
+    width: 100px;
+    margin-right: 5%; 
+    border: none;
+    cursor: pointer;
+}
+.next-step-btn:hover {
+    background-color: hsl(243, 100%, 62%);
+}
+.previous-step-btn {
+    background-color: white;
+    color: hsl(231, 11%, 63%);
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 5px;
+    height: 40px;
+    width: 100px;
+    border: none;
+    cursor: pointer;
+}
+.btn-wrapper {
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+}

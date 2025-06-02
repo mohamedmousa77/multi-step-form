@@ -24,10 +24,25 @@
     border-radius: 5px;
     height: 40px;
     width: 100px;
-    margin-top: 10%;
-    margin-left: 70%;
+    margin-right: 5%; 
     border: none;
     cursor: pointer;
+}
+.previous-step-btn {
+    background-color: white;
+    color: hsl(231, 11%, 63%);
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 5px;
+    height: 40px;
+    width: 100px;
+    border: none;
+    cursor: pointer;
+}
+.btn-wrapper {
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
 }
 .wrapper-add-ons {
     display: flex;

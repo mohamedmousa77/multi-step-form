@@ -12,5 +12,8 @@
         </div>
         <div class="price">+$1/mo</div>
     </div>
-    <input type="button" value="Next Step" class="next-step-btn">
+    <div class="btn-wrapper">
+        <input type="button" (click)="onBack()" value="Go back" class="previous-step-btn">
+        <input type="button" (click)="onNext()" value="Next Step" class="next-step-btn">
+    </div>
 </div>

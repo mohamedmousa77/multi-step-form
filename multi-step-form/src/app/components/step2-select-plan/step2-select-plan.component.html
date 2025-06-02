@@ -6,7 +6,7 @@
         class="plan-wrapper" 
         [class.active]="i === selectedIndex"
         (click)="selectPlan(i)">
-            <img [src]="getIconPath(plan.icon)" class="plan-icon" alt="Plan icon">
+            <!-- <img [src]="getIconPath(plan.icon)" class="plan-icon" alt="Plan icon"> -->
             <p class="plan-title">{{ plan.title }}</p>
             <p class="plan-price">{{ plan.price }}</p>
         </div>
@@ -21,5 +21,8 @@
         
         <span [class.active]="isYearly">Yearly</span>
     </div>
-    <input type="button" value="Next Step" class="next-step-btn">
+    <div class="btn-wrapper">
+        <input type="button" (click)="onBack()" value="Go back" class="previous-step-btn">
+        <input type="button" (click)="onNext()" value="Next Step" class="next-step-btn">
+    </div>
 </div>

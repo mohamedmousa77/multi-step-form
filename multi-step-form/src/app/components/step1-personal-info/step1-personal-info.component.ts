@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FormService } from '../../services/form.service';
 
 @Component({
   selector: 'app-step1-personal-info',
@@ -11,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class Step1PersonalInfoComponent {
   personalForm: FormGroup;
 
-  constructor (private fb: FormBuilder){
+  constructor (private fb: FormBuilder, private formateService: FormService){
     this.personalForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -19,7 +20,7 @@ export class Step1PersonalInfoComponent {
     });
   }
 
-  get email() {
+get email() {
   return this.personalForm.get('email')!;
 }
 
@@ -30,14 +31,12 @@ get name() {
   return this.personalForm.get('name')!;
 }
 
-  onNext(){
-    if(this.personalForm.valid){
-      // Valid go to next step
-    }else {
-      this.personalForm.markAllAsTouched();
-    }
+onNext(){
+  if(this.personalForm.valid){
+    this.formateService.goNextPage();
+  }else {
+    this.personalForm.markAllAsTouched();
   }
-
-
-
 }
+}
+

@@ -3,14 +3,17 @@
 <div class="wrapper">
 <div class="stepper-container">
     <div class="step-wrapper" *ngFor="let step of steps; let i = index">
-        <div class="step-circle" [class.active]="i === 0">{{ i + 1 }}</div>
+        <div class="step-circle" [class.active]="i === pageIndex">{{ i + 1 }}</div>
         <div class="step-labels">
             <p class="step-number">STEP {{ i + 1 }}</p>
             <p class="step-title">{{ step }}</p>
         </div>
     </div>
-    <app-step1-personal-info></app-step1-personal-info>
-    <!-- <app-step2-select-plan></app-step2-select-plan> -->
-    <!-- <app-step3-add-ons></app-step3-add-ons> -->
+    <div [ngSwitch]="pageIndex">
+        <app-step1-personal-info  *ngSwitchCase="0"></app-step1-personal-info>
+        <app-step2-select-plan  *ngSwitchCase="1"></app-step2-select-plan>
+        <app-step3-add-ons  *ngSwitchCase="2"></app-step3-add-ons>
+        <app-step4-summary *ngSwitchCase="3"></app-step4-summary>
+    </div>
 </div>
 </div>
