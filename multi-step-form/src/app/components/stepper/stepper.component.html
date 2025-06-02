@@ -3,7 +3,7 @@
 <div class="wrapper">
 <div class="stepper-container">
     <div class="step-wrapper" *ngFor="let step of steps; let i = index">
-        <div class="step-circle" [class.active]="i === 1">{{ i + 1 }}</div>
+        <div class="step-circle" [class.active]="i === 0">{{ i + 1 }}</div>
         <div class="step-labels">
             <p class="step-number">STEP {{ i + 1 }}</p>
             <p class="step-title">{{ step }}</p>
@@ -11,5 +11,6 @@
     </div>
     <app-step1-personal-info></app-step1-personal-info>
     <!-- <app-step2-select-plan></app-step2-select-plan> -->
+    <!-- <app-step3-add-ons></app-step3-add-ons> -->
 </div>
 </div>

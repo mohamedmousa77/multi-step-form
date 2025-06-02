@@ -1,0 +1,71 @@
+.step-one-personal-info-container {
+    height: 440px;
+    width: 450px;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    padding-left: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    border-bottom-right-radius: 10px;
+    /* box-shadow: 20px 20px 50px hsl(231, 11%, 63%); */
+}
+.session-title {
+    color: hsl(213, 96%, 18%);
+}
+.session-desc {
+    color: hsl(231, 11%, 63%);
+}
+.next-step-btn {
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+    height: 40px;
+    width: 100px;
+    margin-top: 10%;
+    margin-left: 70%;
+    border: none;
+    cursor: pointer;
+}
+.wrapper-add-ons {
+    display: flex;
+    border: 1.5px solid hsl(231, 11%, 63%);
+    height: 70px;
+    width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 10px;
+    margin-bottom: 10px;
+}
+.wrapper-add-ons:hover {
+    border: 1.5px solid  hsl(243, 100%, 62%);
+}
+.wrapper-add-ons.active {
+    border: 1.5px solid  hsl(243, 100%, 62%);
+    background-color: hsl(229, 24%, 87%)
+}
+.title {
+    color: hsl(213, 96%, 18%);
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    margin-left: -15%;
+}
+.desc {
+    margin: 0;
+    margin-left: -15%;
+    color: hsl(231, 11%, 63%);
+}
+.checkbox-btn {
+    height: 20px;
+    width: 20px;
+}
+.price {
+    color:  hsl(243, 100%, 62%);
+    font-weight: 500;
+    margin-right: 5%;
+}

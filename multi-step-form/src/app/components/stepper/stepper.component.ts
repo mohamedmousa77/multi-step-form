@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Step1PersonalInfoComponent } from '../step1-personal-info/step1-personal-info.component';
 import { Step2SelectPlanComponent } from '../step2-select-plan/step2-select-plan.component';
+import { Step3AddOnsComponent } from '../step3-add-ons/step3-add-ons.component';
 @Component({
   selector: 'app-stepper',
   imports: 
@@ -9,6 +10,7 @@ import { Step2SelectPlanComponent } from '../step2-select-plan/step2-select-plan
     CommonModule, 
     Step1PersonalInfoComponent, 
     Step2SelectPlanComponent,
+    Step3AddOnsComponent,
   ],
   templateUrl: './stepper.component.html',
   styleUrl: './stepper.component.css'

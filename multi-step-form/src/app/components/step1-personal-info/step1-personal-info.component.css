@@ -37,6 +37,15 @@
     width: 100px;
     margin-top: 20px;
     margin-left: 70%;
+    margin-bottom: 10px;
     border: none;
     cursor: pointer;
+}
+input.invalid {
+    border: 1px solid red;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
 }
