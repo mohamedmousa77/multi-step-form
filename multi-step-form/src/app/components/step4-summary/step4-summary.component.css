@@ -1,4 +1,4 @@
-.step-one-personal-info-container {
+.summary-container {
     height: 440px;
     width: 450px;
     position: absolute;
@@ -24,12 +24,12 @@
     border-radius: 5px;
     height: 40px;
     width: 100px;
-    margin-right: 5%; 
+    margin-right: 15%; 
     border: none;
     cursor: pointer;
 }
 .next-step-btn:hover {
-    background-color: hsl(243, 100%, 62%);
+    background-color: hsl(228, 100%, 84%);
 }
 .previous-step-btn {
     background-color: white;
@@ -46,4 +46,80 @@
     margin-top: 10%;
     display: flex;
     justify-content: space-between;
+}
+.plan-wrapper {
+    width: 80%;
+    display: flex;
+    background-color:hsl(218, 100%, 97%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 5%;
+    justify-content: space-between;
+    border-bottom: 1px solid hsl(231, 11%, 63%);
+}
+.plan-title {
+    color: hsl(213, 96%, 18%);
+    font-size: 16;
+    font-weight: 500;
+}
+.plan-price-wrapper {   
+    color: hsl(213, 96%, 18%);
+    font-size: 16;
+    font-weight: 500;
+    margin-right: 5%;
+    align-content: center;
+}
+.plan-change-btn {
+    color:hsl(231, 11%, 63%);
+    text-decoration-line: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+.plan-change-btn:hover {
+    color:hsl(243, 100%, 62%);
+    text-decoration-line: underline;
+    font-weight: 500;
+    cursor: pointer;
+}
+.adds-wrapper {
+    width: 80%;
+    display: flex;
+    background-color:hsl(218, 100%, 97%);
+    padding-left: 5%;
+    justify-content: space-between;
+}
+
+.add-title {
+    color:hsl(231, 11%, 63%);
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 5%;
+   
+}
+
+.adds-price {  
+    color: hsl(213, 96%, 18%);
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 5%;
+    align-content: center;
+}
+.adds-price-wrapper {
+    margin-right: 5%;
+}
+.total-amount-wrapper {
+    width: 82%;
+    display: flex;
+    justify-content: space-between;
+}
+.total-amount-txt {
+    margin-left: 7%;
+    color:hsl(231, 11%, 63%);
+    font-weight: 500;
+    font-size: 12px;
+} 
+.total-amount {
+    color: hsl(243, 100%, 62%);
+    font-weight: 600;
+    font-size: 16px;
 }

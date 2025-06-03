@@ -32,11 +32,13 @@ get name() {
 }
 
 onNext(){
-  if(this.personalForm.valid){
     this.formateService.goNextPage();
-  }else {
-    this.personalForm.markAllAsTouched();
-  }
+
+  // if(this.personalForm.valid){
+  //   this.formateService.goNextPage();
+  // }else {
+  //   this.personalForm.markAllAsTouched();
+  // }
 }
 }
 
