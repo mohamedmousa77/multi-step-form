@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormService } from '../../services/form.service';
+import { FormService, PersonalInfo, PlanInfo } from '../../services/form.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -24,12 +24,20 @@ export class Step4SummaryComponent {
   ];
   totalAmount = '$12/mo';
 
+  ngOnInit() {
+    this.personalInfo = this.formService.getPersonalInfo();
+    this.planSelected = this.formService.getPlanInfo();
+  }
 
   constructor(private formService: FormService){ }
 
+  personalInfo!: PersonalInfo;
+  planSelected!: PlanInfo; 
+
+
+
   onNext(){
-    console.log(`on Next called! `);
-    this.formService.goNextPage();
+   this.personalInfo = this.formService.getPersonalInfo();
   }
   onBack(){
     console.log(`on Back called! `);

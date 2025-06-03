@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
-import { FormService } from '../../services/form.service';
+import { FormService, PlanInfo } from '../../services/form.service';
 
 @Component({
   selector: 'app-step2-select-plan',
@@ -56,18 +56,23 @@ export class Step2SelectPlanComponent {
 
   selectPlan(index:number){
     this.selectedIndex = index;
+    if(this.isYearly){
+      this.formService.setPlanInfo({price: this.yearlyPlans[index].price, title: this.yearlyPlans[index].title});
+    }else {
+      this.formService.setPlanInfo({price: this.monthlyPlans[index].price, title: this.monthlyPlans[index].title});
+    }
   }
 
   get selectedPlans() {
-    console.log(`selected plans called, ${this.isYearly}`);
+    // console.log(`selected plans called, ${this.isYearly}`);
     return this.isYearly ? this.yearlyPlans : this.monthlyPlans;
   }
+
+
   onNext(){
-    console.log(`on Next called! `);
     this.formService.goNextPage();
   }
   onBack(){
-    console.log(`on Back called! `);
     this.formService.goBack();
   }
 

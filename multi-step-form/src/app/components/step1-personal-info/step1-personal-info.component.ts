@@ -12,6 +12,8 @@ import { FormService } from '../../services/form.service';
 export class Step1PersonalInfoComponent {
   personalForm: FormGroup;
 
+
+
   constructor (private fb: FormBuilder, private formateService: FormService){
     this.personalForm = this.fb.group({
       name: ['', Validators.required],
@@ -35,7 +37,8 @@ onNext(){
     this.formateService.goNextPage();
 
   // if(this.personalForm.valid){
-  //   this.formateService.goNextPage();
+    // this.formateService.goNextPage(); 
+    // this.formateService.setPersonalInfo(this.personalForm.value);
   // }else {
   //   this.personalForm.markAllAsTouched();
   // }

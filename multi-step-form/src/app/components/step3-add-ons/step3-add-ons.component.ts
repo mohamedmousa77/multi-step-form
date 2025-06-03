@@ -11,6 +11,7 @@ import { FormService } from '../../services/form.service';
 export class Step3AddOnsComponent {
 
   constructor (private formService:FormService){}
+
   addOns = [
     {
       'title':'Online services',
@@ -29,8 +30,11 @@ export class Step3AddOnsComponent {
     },
   ];
 
+  addService(index: number) {
+    
+  }
   
-    onNext(){
+  onNext(){
     console.log(`on Next called! `);
     this.formService.goNextPage();
   }
