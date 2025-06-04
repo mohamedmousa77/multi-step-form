@@ -2,15 +2,19 @@
     <h1 class="session-title">Pick add-ons</h1>
     <p class="session-desc">Add-ons help enhance your gaming experience</p>
 
-    <div class="wrapper-add-ons" *ngFor="let extra of addOns, let i = index">
+    <div class="wrapper-add-ons" 
+    [class.active]="isChecked[i]"
+    *ngFor="let extra of addOns, let i = index">
         <div class="add-btn">
-            <input type="checkbox" (change)="addService(i, $event.target.checked)" class="checkbox-btn" name="" id="">
+            <input type="checkbox"
+            (change)="onCheckboxChange($event, i)" 
+            class="checkbox-btn" name="" id="">
         </div>
         <div class="wrapper-info">
-            <p class="title">Online service</p>
-            <p class="desc">Access to multiplayer games</p>
+            <p class="title">{{extra.title}}</p>
+            <p class="desc">{{extra.desc}}</p>
         </div>
-        <div class="price">+$1/mo</div>
+        <div class="price">{{extra.price}}</div>
     </div>
     <div class="btn-wrapper">
         <input type="button" (click)="onBack()" value="Go back" class="previous-step-btn">

@@ -23,10 +23,13 @@ export interface ServiceInfo {
 
 
 export class FormService {
+  
   constructor() { }
-  // {'name':string, 'email':string, 'phoneNumber':string} 
 
-  private personalInfoSubject = new BehaviorSubject<PersonalInfo>( {
+  private pageIndexSubject = new BehaviorSubject<number>(0);
+  pageIndex$ = this.pageIndexSubject.asObservable();
+
+   private personalInfoSubject = new BehaviorSubject<PersonalInfo>( {
     name:'',
     phone:'',
     email:'',
@@ -46,13 +49,29 @@ export class FormService {
   ServiceAdded$ = this.serviceAddedSubject.asObservable();
 
   addService(service: ServiceInfo):void {
+      console.log(`Add ons in service called!!!
+        Service received: ${service.name}`);
     const currentService  = this.serviceAddedSubject.getValue();
     const exist = currentService.find(s => s.name === service.name);
     if(!exist){
-      this.serviceAddedSubject.next([...currentService,service]);
+      const updateList = [...currentService,service];
+      this.serviceAddedSubject.next(updateList);
+      console.log(`is not exist. ADDED.`);
+      console.table(updateList);
     }
   }
 
+  removeService(ServiceTitle: string):void{
+    const currentService  = this.serviceAddedSubject.getValue();
+    const update = currentService.filter(s => s.name !== ServiceTitle);
+    this.serviceAddedSubject.next(update);
+    console.log(`Remove called. REMOVED.`);
+      console.table(update);
+  }
+
+  getServiceInfo(): ServiceInfo[]{
+    return this.serviceAddedSubject.getValue();
+  }
 
   setPersonalInfo (data: PersonalInfo){
     console.log(`set personal Info called: data received: ${data}`);
@@ -70,34 +89,18 @@ export class FormService {
     return this.planSubjrct.getValue();
   }
 
-  setServiceInfo(data:ServiceInfo[]){
 
-  }
-  getServiceInfo(): ServiceInfo[]{
-    return this.serviceAddedSubject.getValue();
-  }
-
-  private pageIndexSubject = new BehaviorSubject<number>(0);
-  pageIndex$ = this.pageIndexSubject.asObservable();
-  
   goNextPage(): void {
     const current = this.pageIndexSubject.value;
     this.pageIndexSubject.next(current + 1);
+  }
 
-    console.log(
-      `Services NEXXT called, current index = ${current} 
-      new index: ${this.pageIndexSubject}`
-    );
+  changePlan(): void {
+    this.pageIndexSubject.next(1);
   }
 
   goBack(): void {
-    
     const current = this.pageIndexSubject.value;
     this.pageIndexSubject.next(current - 1);
-    console.log(
-      `Services BACK called, current index = ${current} 
-      new index: ${this.pageIndexSubject}`
-    );
-
   }
 }

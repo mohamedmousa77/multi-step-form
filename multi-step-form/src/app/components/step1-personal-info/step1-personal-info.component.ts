@@ -34,14 +34,14 @@ get name() {
 }
 
 onNext(){
-    this.formateService.goNextPage();
-
-  // if(this.personalForm.valid){
-    // this.formateService.goNextPage(); 
-    // this.formateService.setPersonalInfo(this.personalForm.value);
-  // }else {
-  //   this.personalForm.markAllAsTouched();
-  // }
+  // this.formateService.goNextPage();
+  // this.formateService.setPersonalInfo(this.personalForm.value);
+  if(this.personalForm.valid){
+    this.formateService.goNextPage(); 
+    this.formateService.setPersonalInfo(this.personalForm.value);
+  }else {
+    this.personalForm.markAllAsTouched();
+  }
 }
 }
 

@@ -1,0 +1,19 @@
+.step-five-confirm-registration-container {
+    height: 440px;
+    width: 450px;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    padding-left: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    border-bottom-right-radius: 10px;
+    /* box-shadow: 20px 20px 50px hsl(231, 11%, 63%); */
+}
+.session-title {
+    color: hsl(213, 96%, 18%);
+}
+.session-desc {
+    color: hsl(231, 11%, 63%);
+}

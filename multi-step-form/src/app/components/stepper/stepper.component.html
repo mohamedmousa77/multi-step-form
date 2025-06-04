@@ -9,11 +9,15 @@
             <p class="step-title">{{ step }}</p>
         </div>
     </div>
-    <div [ngSwitch]="pageIndex">
+    <!-- <div [ngSwitch]="pageIndex">
         <app-step1-personal-info  *ngSwitchCase="0"></app-step1-personal-info>
         <app-step2-select-plan  *ngSwitchCase="1"></app-step2-select-plan>
         <app-step3-add-ons  *ngSwitchCase="2"></app-step3-add-ons>
         <app-step4-summary *ngSwitchCase="3"></app-step4-summary>
+        <app-step5-confirming-registration *ngSwitchCase="4"></app-step5-confirming-registration>
+    </div> -->
+    <div>
+        <app-step5-confirming-registration></app-step5-confirming-registration>
     </div>
 </div>
 </div>

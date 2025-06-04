@@ -37,22 +37,28 @@ export class Step4SummaryComponent {
       this.selectedAddsOns = data;
     });
     
-    console.log(`Personal info collected: ${this.personalInfo.name}, Plan Selected: ${this.planSelected.title} 
-      Services selected: ${this.selectedAddOns[0].productName}`);
+    console.log(`Personal info collected: ${this.personalInfo.name}.
+      \n Plan Selected: ${this.planSelected.title}.
+      \n Services selected: ${this.selectedAddsOns.length}`);
+  }
+  
+  onConfirm(){
+  // this.personalInfo = this.formService.getPersonalInfo();
+  console.log(`Data collected: 
+    Personal info: ${this.personalInfo.name, this.personalInfo.name}. 
+    \n Plan selected: ${this.planSelected.title}.
+    \n Services selected num: ${this.selectedAddOns.length}
+    `);
+    this.formService.goNextPage();
   }
 
-  
-
-  
-
-
-
-  onNext(){
-  this.personalInfo = this.formService.getPersonalInfo();
-  }
   onBack(){
     console.log(`on Back called! `);
     this.formService.goBack();
   }
 
+  changePlan() {
+     this.formService.changePlan();
+
+  }
 }

@@ -8,6 +8,7 @@ import { Step1PersonalInfoComponent } from '../step1-personal-info/step1-persona
 import { Step2SelectPlanComponent } from '../step2-select-plan/step2-select-plan.component';
 import { Step3AddOnsComponent } from '../step3-add-ons/step3-add-ons.component';
 import { Step4SummaryComponent } from '../step4-summary/step4-summary.component';
+import { Step5ConfirmingRegistrationComponent } from '../step5-confirming-registration/step5-confirming-registration.component';
 
 
 
@@ -20,6 +21,7 @@ import { Step4SummaryComponent } from '../step4-summary/step4-summary.component'
     Step2SelectPlanComponent,
     Step3AddOnsComponent,
     Step4SummaryComponent,
+    Step5ConfirmingRegistrationComponent,
   ],
   templateUrl: './stepper.component.html',
   styleUrl: './stepper.component.css'

@@ -10,6 +10,8 @@ import { FormService } from '../../services/form.service';
 })
 export class Step3AddOnsComponent {
 
+  isChecked: boolean[] = [false, false, false]; 
+
   constructor (private formService:FormService){}
 
   addOns = [
@@ -29,23 +31,24 @@ export class Step3AddOnsComponent {
       'price':'+$2/mo'
     },
   ];
-
-  addService(index: number, checked:boolean) {
+  
+  onCheckboxChange(event: Event, index: number): void {
     const selected = this.addOns[index];
-  if (checked) {
-    this.formService.addService({ name: selected.title, price: selected.price });
-  } else {
-    // this.formService.removeService(selected.title);
-  }
-    
+    const input = event.target as HTMLInputElement;
+    const checked = input.checked;
+    this.isChecked[index] = input.checked;
+    console.log(`Service selected: ${selected.title}, is checked: ${checked}`);
+    if (checked) {
+      this.formService.addService({ name: selected.title, price: selected.price });
+    } else {
+      this.formService.removeService(selected.title);
+      }
   }
   
   onNext(){
-    console.log(`on Next called! `);
     this.formService.goNextPage();
   }
   onBack(){
-    console.log(`on Back called! `);
     this.formService.goBack();
   }
 

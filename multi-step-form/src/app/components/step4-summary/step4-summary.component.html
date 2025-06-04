@@ -3,17 +3,17 @@
     <p class="session-desc">Double-check everything look fine before confirming</p>
     <div class="plan-wrapper">
         <div class="plan-container">
-            <p class="plan-title">{{selectedPlan}}</p>
-            <p class="plan-change-btn">Change</p>
-           
+            <p class="plan-title">{{planSelected.title}}</p>
+            <!-- <button class="plan-change-btn" >Change</button> -->
+            <p class="plan-change-btn" (click)="changePlan()">Change</p>
         </div>
         <div class="plan-price-wrapper">
-             <p>{{selectedPlanPrice}}</p>
+             <p>{{this.planSelected.price}}</p>
         </div>
     </div>
-    <div class="adds-wrapper" *ngFor="let add of selectedAddOns">
+    <div class="adds-wrapper" *ngFor="let add of selectedAddsOns">
         <div class="adds-container">
-            <p class="add-title">{{add.productName}}</p>
+            <p class="add-title">{{add.name}}</p>
         </div>
         <div class="adds-price-wrapper">
              <p class="adds-price">{{add.price}}</p>
@@ -27,6 +27,6 @@
 
     <div class="btn-wrapper">
         <input type="button" (click)="onBack()" value="Go back" class="previous-step-btn">
-        <input type="button" (click)="onNext()" value="Confirm" class="next-step-btn">
+        <input type="button" (click)="onConfirm()" value="Confirm" class="next-step-btn">
     </div>
 </div>

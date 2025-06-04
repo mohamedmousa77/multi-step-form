@@ -12,7 +12,7 @@ import { FormService, PlanInfo } from '../../services/form.service';
 export class Step2SelectPlanComponent {
   isYearly: boolean = false;
   selectedIndex: number = 0;
-
+  isSelected: boolean = false;
   constructor (private formService: FormService){}
 
   monthlyPlans = [
@@ -55,6 +55,7 @@ export class Step2SelectPlanComponent {
   }
 
   selectPlan(index:number){
+    this.isSelected = true;
     this.selectedIndex = index;
     if(this.isYearly){
       this.formService.setPlanInfo({price: this.yearlyPlans[index].price, title: this.yearlyPlans[index].title});
@@ -70,6 +71,9 @@ export class Step2SelectPlanComponent {
 
 
   onNext(){
+    if(!this.isSelected){
+    this.formService.setPlanInfo({price: this.monthlyPlans[0].price, title: this.monthlyPlans[0].title});
+    }
     this.formService.goNextPage();
   }
   onBack(){
