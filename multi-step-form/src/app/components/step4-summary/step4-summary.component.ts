@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormService, PersonalInfo, PlanInfo } from '../../services/form.service';
+import { FormService, PersonalInfo, PlanInfo, ServiceInfo } from '../../services/form.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -24,20 +24,31 @@ export class Step4SummaryComponent {
   ];
   totalAmount = '$12/mo';
 
-  ngOnInit() {
-    this.personalInfo = this.formService.getPersonalInfo();
-    this.planSelected = this.formService.getPlanInfo();
-  }
-
   constructor(private formService: FormService){ }
 
   personalInfo!: PersonalInfo;
   planSelected!: PlanInfo; 
+  selectedAddsOns: ServiceInfo[] = [];
+
+  ngOnInit() {
+    this.personalInfo = this.formService.getPersonalInfo();
+    this.planSelected = this.formService.getPlanInfo();
+    this.formService.ServiceAdded$.subscribe(data => {
+      this.selectedAddsOns = data;
+    });
+    
+    console.log(`Personal info collected: ${this.personalInfo.name}, Plan Selected: ${this.planSelected.title} 
+      Services selected: ${this.selectedAddOns[0].productName}`);
+  }
+
+  
+
+  
 
 
 
   onNext(){
-   this.personalInfo = this.formService.getPersonalInfo();
+  this.personalInfo = this.formService.getPersonalInfo();
   }
   onBack(){
     console.log(`on Back called! `);

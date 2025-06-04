@@ -30,7 +30,13 @@ export class Step3AddOnsComponent {
     },
   ];
 
-  addService(index: number) {
+  addService(index: number, checked:boolean) {
+    const selected = this.addOns[index];
+  if (checked) {
+    this.formService.addService({ name: selected.title, price: selected.price });
+  } else {
+    // this.formService.removeService(selected.title);
+  }
     
   }
   

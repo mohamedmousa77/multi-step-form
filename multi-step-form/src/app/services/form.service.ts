@@ -26,7 +26,7 @@ export class FormService {
   constructor() { }
   // {'name':string, 'email':string, 'phoneNumber':string} 
 
-   private personalInfoSubject = new BehaviorSubject<PersonalInfo>( {
+  private personalInfoSubject = new BehaviorSubject<PersonalInfo>( {
     name:'',
     phone:'',
     email:'',
@@ -44,6 +44,14 @@ export class FormService {
   private serviceAddedSubject = new BehaviorSubject<ServiceInfo[]>([]);
 
   ServiceAdded$ = this.serviceAddedSubject.asObservable();
+
+  addService(service: ServiceInfo):void {
+    const currentService  = this.serviceAddedSubject.getValue();
+    const exist = currentService.find(s => s.name === service.name);
+    if(!exist){
+      this.serviceAddedSubject.next([...currentService,service]);
+    }
+  }
 
 
   setPersonalInfo (data: PersonalInfo){

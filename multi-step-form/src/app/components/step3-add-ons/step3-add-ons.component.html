@@ -4,7 +4,7 @@
 
     <div class="wrapper-add-ons" *ngFor="let extra of addOns, let i = index">
         <div class="add-btn">
-            <input type="checkbox" (click)="addService(i)" class="checkbox-btn" name="" id="">
+            <input type="checkbox" (change)="addService(i, $event.target.checked)" class="checkbox-btn" name="" id="">
         </div>
         <div class="wrapper-info">
             <p class="title">Online service</p>
